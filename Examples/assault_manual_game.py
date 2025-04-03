@@ -1,3 +1,4 @@
+# Here, I imported the necessary libraries
 import gymnasium as gym
 import ale_py
 gym.register_envs(ale_py)
@@ -16,8 +17,8 @@ action_keys = {
     "a": 4, # move left
     "d": 3, # move right
     "l": 6,  # press fire to left
-    "k": 5,
-    "i": 2
+    "k": 5, # press fire to right
+    "i": 2 # press fire to up
 }
 
 # no operation in this environment is 0
