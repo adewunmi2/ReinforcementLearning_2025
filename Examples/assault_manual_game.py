@@ -15,7 +15,9 @@ env = gym.make('Assault', render_mode="rgb_array", max_episode_steps=1000)
 action_keys = {
     "a": 4, # move left
     "d": 3, # move right
-    "l": 1  # press fire
+    "l": 6,  # press fire to left
+    "k": 5,
+    "i": 2
 }
 
 # no operation in this environment is 0
