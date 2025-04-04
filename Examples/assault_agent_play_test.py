@@ -12,12 +12,12 @@ from stable_baselines3 import PPO
 from stable_baselines3.common.vec_env import DummyVecEnv
 
 # Custom Environment Class (to match the one used during training)
-# class CustomassaultV5(gym.Env):
-class CustomRiverraidV5(gym.Env):
+class CustomAssaultV5(gym.Env):
+# class CustomRiverraidV5(gym.Env):
     def __init__(self):
         # Set render_mode when creating the environment
-        self.env = gym.make('ALE/Riverraid-v5', render_mode='human')  # Set render_mode here
-        # self.env = gym.make('ALE/Assault-v5', render_mode='human')  # Set render_mode here
+        # self.env = gym.make('ALE/Riverraid-v5', render_mode='human')  # Set render_mode here
+        self.env = gym.make('ALE/Assault-v5', render_mode='human')  # Set render_mode here
         self.time_alive = 0  # Track survival time ALE/Assault-v5
 
         # Make sure the action and observation spaces are the same as the original environment
@@ -52,15 +52,16 @@ class CustomRiverraidV5(gym.Env):
 
 
 # Create the custom Riverraid-v5 environment with render_mode set to "human"
-env = CustomRiverraidV5()
-# env = CustomAssaultV5()
+# env = CustomRiverraidV5()
+env = CustomAssaultV5()
 
 # Wrap it for vectorized environments (important for Stable Baselines3)
 env = DummyVecEnv([lambda: env])  # Vectorized environment
 
 # Load the trained model
-model = PPO.load("custom_riverraid_v5_ppo")
+# model = PPO.load("custom_riverraid_v5_ppo")
 # model = PPO.load("custom_assault_v5_ppo")
+model = PPO.load("C:/Users/User/ReinforcementLearning_2025/ReinforcementLearning_2025/Examples/custom_assault_v5_ppo.zip")
 
 # Reset the environment
 obs  = env.reset()
