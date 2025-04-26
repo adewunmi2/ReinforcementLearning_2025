@@ -1,3 +1,6 @@
 venv310
 *.zip
 /custom_assault_v5_ppo/
+
+# Ignore videos folder
+videos/
